@@ -2,7 +2,7 @@ import { useParams } from '$app/core'
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'
-import { readMarkdown } from '@/lib/content'
+import { readMarkdown } from '../../../server/content'
 
 interface BlogPostData {
   title: string

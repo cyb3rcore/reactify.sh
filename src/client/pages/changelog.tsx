@@ -1,5 +1,5 @@
-import { readYaml } from '@/lib/content'
-import { useRouteData } from '$app/core'
+export const rsc = true
+import { readYaml } from '../../server/content'
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'
@@ -11,24 +11,18 @@ interface Release {
   notes: string
 }
 
-interface ChangelogData {
-  releases: Release[]
-}
-
 export function getMeta() {
   return { title: 'Changelog — reactify', description: 'Release history for @cyb3rcore/reactify.' }
 }
 
-export async function getData(): Promise<ChangelogData> {
+export default async function Changelog() {
+  let releases: Release[] = []
   try {
-    return readYaml<ChangelogData>('content/changelog.yaml')
+    const data = readYaml<{ releases: Release[] }>('content/changelog.yaml')
+    releases = data.releases
   } catch {
-    return { releases: [] }
+    releases = []
   }
-}
-
-export default function Changelog() {
-  const { releases } = useRouteData()
 
   return (
     <div className={css({ maxW: '720px', mx: 'auto', px: '4', py: '16' })}>

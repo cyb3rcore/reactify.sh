@@ -7,10 +7,10 @@ const md = new MarkdownIt({ html: false })
 
 /**
  * Resolve a project-relative path relative to the project root.
- * Uses process.cwd() which is always the project root in both dev and production.
+ * Uses import.meta.dirname since this file lives in src/server/.
  */
 function resolvePath(relativePath: string): string {
-  return resolve(process.cwd(), relativePath)
+  return resolve(import.meta.dirname, '..', relativePath)
 }
 
 /**

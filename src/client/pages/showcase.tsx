@@ -1,6 +1,6 @@
+export const rsc = true
 import { Badge } from '@/components/ui/badge'
-import { listFiles, readYaml } from '@/lib/content'
-import { useRouteData } from '$app/core'
+import { listFiles, readYaml } from '../../server/content'
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import * as ShowcaseCard from '@/components/ui/showcase-card'
@@ -16,16 +16,11 @@ export function getMeta() {
   return { title: 'Showcase — reactify', description: 'Projects built with reactify.' }
 }
 
-export async function getData(): Promise<{ entries: ShowcaseEntry[] }> {
+export default async function Showcase() {
   const files = listFiles('content/showcase', '.yaml')
   const entries: ShowcaseEntry[] = files
     .map((f) => readYaml<ShowcaseEntry>(`content/showcase/${f}`))
     .filter((e) => e.name)
-  return { entries }
-}
-
-export default function Showcase() {
-  const { entries } = useRouteData()
 
   return (
     <div className={css({ maxW: '1000px', mx: 'auto', px: '4', py: '16' })}>

@@ -1,8 +1,8 @@
+export const rsc = true
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import * as BlogCard from '@/components/ui/blog-card'
-import { useRouteData } from '$app/core'
-import { listFiles, readMarkdown } from '@/lib/content'
+import { listFiles, readMarkdown } from '../../../server/content'
 
 interface BlogPost {
   slug: string
@@ -15,7 +15,7 @@ export function getMeta() {
   return { title: 'Blog — reactify', description: 'Dev notes, guides, and announcements about reactify.' }
 }
 
-export async function getData(): Promise<{ posts: BlogPost[] }> {
+export default async function BlogIndex() {
   const files = listFiles('content/blog', '.md')
 
   const posts: BlogPost[] = files
@@ -30,12 +30,6 @@ export async function getData(): Promise<{ posts: BlogPost[] }> {
       }
     })
     .sort((a, b) => b.date.localeCompare(a.date))
-
-  return { posts }
-}
-
-export default function BlogIndex() {
-  const { posts } = useRouteData()
 
   return (
     <div className={css({ maxW: '800px', mx: 'auto', px: '4', py: '16' })}>
