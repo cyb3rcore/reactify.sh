@@ -8,6 +8,7 @@ import { card } from "./card";
 import { text } from "./text";
 import { heading } from "./heading";
 import { button } from "./button";
+import { blogCard } from "./blog-card";
 export const recipes = {
   button,
   heading,
@@ -20,4 +21,6 @@ export const recipes = {
   absoluteCenter,
   spinner
 }
-export const slotRecipes = {}
+export const slotRecipes = {
+  blogCard,
+}
