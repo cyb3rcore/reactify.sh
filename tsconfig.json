@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react-jsx",
     "lib": ["ES2020", "DOM"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/client/*"],
+      "~/*": ["./src/client/*"],
+      "styled-system/*": ["./styled-system/*"]
+    },
     "strict": true,
     "outDir": "dist",
     "rootDir": "src",
