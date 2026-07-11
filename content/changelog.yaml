@@ -1,0 +1,7 @@
+releases:
+  - version: "1.0.3"
+    date: "2026-07-12"
+    notes: "Bug fixes and stability improvements."
+  - version: "1.0.0"
+    date: "2026-06-15"
+    notes: "Initial stable release. React SSR, RSC, server actions, file-system routing, and SPA navigation."
