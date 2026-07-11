@@ -1,6 +1,6 @@
 # reactify.sh
 
-Demo project for the [reactify](https://github.com/cyb3rcore/reactify) framework — Fastify + React SSR + RSC.
+Website for the [reactify](https://github.com/cyb3rcore/reactify) framework — Fastify + React SSR + RSC.
 
 ## Quick Start
 
