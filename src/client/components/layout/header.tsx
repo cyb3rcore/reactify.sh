@@ -1,5 +1,6 @@
 import { css } from 'styled-system/css'
 import { Button } from '@/components/ui/button'
+import { Link } from '@cyb3rcore/reactify'
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -10,19 +11,20 @@ const navItems = [
 
 function NavLink({ href, label }: { href: string; label: string }) {
   return (
-    <a
-      href={href}
-      className={css({
-        px: '3',
-        py: '2',
-        color: 'fg.muted',
-        textDecoration: 'none',
-        borderRadius: 'l2',
-        _hover: { bg: 'bg.subtle', color: 'fg.default' },
-      })}
-    >
-      {label}
-    </a>
+    <Link to={href}>
+      <span
+        className={css({
+          px: '3',
+          py: '2',
+          color: 'fg.muted',
+          textDecoration: 'none',
+          borderRadius: 'l2',
+          _hover: { bg: 'bg.subtle', color: 'fg.default' },
+        })}
+      >
+        {label}
+      </span>
+    </Link>
   )
 }
 
@@ -50,12 +52,11 @@ export function Header() {
           justifyContent: 'space-between',
         })}
       >
-        <a
-          href="/"
-          className={css({ fontWeight: 'bold', fontSize: 'xl', textDecoration: 'none' })}
-        >
-          reactify
-        </a>
+        <Link to="/">
+          <span className={css({ fontWeight: 'bold', fontSize: 'xl', textDecoration: 'none' })}>
+            reactify
+          </span>
+        </Link>
 
         <div className={css({ display: 'flex', gap: '2', alignItems: 'center' })}>
           {navItems.map((item) => (
