@@ -1,0 +1,13 @@
+features:
+  - title: "File-System Routing"
+    description: "Pages in pages/ become routes automatically. Dynamic params via [slug].tsx. Zero config routing."
+  - title: "React Server Components"
+    description: "Mark any page with export const rsc = true for async server components that stream to the client."
+  - title: "Server Actions"
+    description: "Define 'use server' functions that call back to the server from client components with useActionState."
+  - title: "SSR Streaming"
+    description: "Suspense boundaries stream in as they resolve. Ship HTML progressively, no waiting for all data."
+  - title: "SPA Navigation"
+    description: "Built-in client-side navigation with Link component and hover prefetch caching. No React Router needed."
+  - title: "Fastify-Native"
+    description: "Tight integration with Fastify hooks, plugins, and ecosystem. Access req, reply, and server from any page."
