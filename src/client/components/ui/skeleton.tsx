@@ -1,3 +1,4 @@
+'use client'
 import { ark } from '@ark-ui/react/factory'
 import { type ComponentProps, forwardRef } from 'react'
 import { Stack, type StackProps, styled } from 'styled-system/jsx'

@@ -1,3 +1,4 @@
+'use client'
 import { forwardRef } from 'react'
 import { Button, type ButtonProps } from './button'
 

@@ -1,3 +1,4 @@
+'use client'
 import { css } from 'styled-system/css'
 import { Button } from '@/components/ui/button'
 import { Link } from '@cyb3rcore/reactify'

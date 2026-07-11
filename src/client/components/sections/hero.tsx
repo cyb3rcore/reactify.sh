@@ -1,3 +1,4 @@
+'use client'
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'

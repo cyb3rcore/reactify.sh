@@ -1,3 +1,4 @@
+'use client'
 import { css } from 'styled-system/css'
 
 export function Footer() {

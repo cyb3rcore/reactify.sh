@@ -1,3 +1,4 @@
+'use client'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { type TextVariantProps, text } from 'styled-system/recipes'

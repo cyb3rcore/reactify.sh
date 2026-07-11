@@ -1,3 +1,4 @@
+'use client'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { type HeadingVariantProps, heading } from 'styled-system/recipes'
