@@ -1,19 +1,25 @@
+import { useRouteData } from '$app/core'
+import { readYaml } from '@/lib/content'
+import { HeroSection, type HeroData } from '@/components/sections/hero'
+import { FeaturesSection, type FeaturesData } from '@/components/sections/features'
+
 export function getMeta() {
-  return { title: 'reactify-sh', description: 'A Reactify project' }
+  return { title: 'reactify — React SSR + RSC for Fastify', description: 'A batteries-included framework for building server-rendered React applications with Fastify, Vite, and React Server Components.' }
 }
 
-export function getData() {
-  return { message: 'Welcome to your Reactify app!' }
+export async function getData() {
+  const hero = readYaml<HeroData>('content/sections/hero.yaml')
+  const features = readYaml<FeaturesData>('content/sections/features.yaml')
+  return { hero, features }
 }
 
 export default function Home() {
+  const { hero, features } = useRouteData()
+
   return (
-    <div>
-      <h1>reactify-sh</h1>
-      <p>Built with Reactify — Fastify + React + Vite</p>
-      <nav>
-        <a href="/demo">View demos</a>
-      </nav>
-    </div>
+    <>
+      <HeroSection data={hero} />
+      <FeaturesSection data={features} />
+    </>
   )
 }
