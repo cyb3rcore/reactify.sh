@@ -27,9 +27,9 @@ export function HeroSection({ data }: { data: HeroData }) {
       <Text size="lg" color="fg.muted" className={css({ mb: '8', maxW: '600px', mx: 'auto' })}>
         {data.subheading}
       </Text>
-      <a href={data.ctaLink}>
-        <Button size="lg">{data.ctaText}</Button>
-      </a>
+      <Button asChild size="lg">
+        <a href={data.ctaLink}>{data.ctaText}</a>
+      </Button>
     </section>
   )
 }
