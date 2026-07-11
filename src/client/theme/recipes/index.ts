@@ -9,6 +9,7 @@ import { text } from "./text";
 import { heading } from "./heading";
 import { button } from "./button";
 import { blogCard } from "./blog-card";
+import { showcaseCard } from "./showcase-card";
 export const recipes = {
   button,
   heading,
@@ -23,4 +24,5 @@ export const recipes = {
 }
 export const slotRecipes = {
   blogCard,
+  showcaseCard,
 }
