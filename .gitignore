@@ -2,3 +2,8 @@ node_modules
 dist
 *.tsbuildinfo
 styled-system
+bun.lock
+package-lock.json
+pnpm-lock.yaml
+.yarn
+yarn.lock
