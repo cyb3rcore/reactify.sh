@@ -1,4 +1,5 @@
 'use client'
+import { Link } from '@cyb3rcore/reactify'
 import { css } from 'styled-system/css'
 import { Heading } from '@/components/ui/heading'
 import { Button } from '@/components/ui/button'
@@ -15,9 +16,14 @@ export function CtaSection({ data }: { data: CtaData }) {
       <Heading as="h2" size="2xl" className={css({ mb: '6' })}>
         {data.headline}
       </Heading>
-      <Button asChild size="lg">
-        <a href={data.buttonLink}>{data.buttonText}</a>
-      </Button>
+      <div className={css({ display: 'flex', gap: '4', justifyContent: 'center', flexWrap: 'wrap' })}>
+        <Button asChild size="lg">
+          <a href={data.buttonLink}>{data.buttonText}</a>
+        </Button>
+        <Button asChild variant="outline" size="lg">
+          <Link to="/blog">Read the Blog</Link>
+        </Button>
+      </div>
     </section>
   )
 }
